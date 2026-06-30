@@ -13,7 +13,6 @@ public class Product {
 
 public class EcommerceSearchFunction {
 
-    // Linear search - checks every element one by one
     public static Product linearSearch(Product[] products, int targetId) {
         for (Product p : products) {
             if (p.productId == targetId) {
@@ -22,8 +21,7 @@ public class EcommerceSearchFunction {
         }
         return null;
     }
-
-    // Binary search - only works if the array is already sorted by productId
+    
     public static Product binarySearch(Product[] products, int targetId) {
         int low = 0, high = products.length - 1;
 
@@ -51,8 +49,6 @@ public class EcommerceSearchFunction {
 
         Product found1 = linearSearch(products, 104);
         System.out.println("Linear search found: " + (found1 != null ? found1.productName : "not found"));
-
-        // products array above is already sorted by productId, so binary search works directly
         Product found2 = binarySearch(products, 104);
         System.out.println("Binary search found: " + (found2 != null ? found2.productName : "not found"));
     }
